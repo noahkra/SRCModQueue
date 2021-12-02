@@ -42,4 +42,3 @@ If you have any feature requests or want to report a bug, make sure to submit an
 
 # Known issues
 - Sometimes a download will hang because of the way YouTube works. Usually retrying the download will solve this problem. In the future an auto-retry feature may be added.
-- Loading cursor will stay after initial startup. Just type in the game you wish to view and it will continue. Afterwards this won't happen anymore (it'll load the last viewed game on application launch).
