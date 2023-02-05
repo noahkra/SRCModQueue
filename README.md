@@ -75,4 +75,6 @@ Display the ID that SRC has assigned to the run submission. When disabled just s
 Automatically retry failed downloads. Recommended to be left on unless you have a limited amount of bandwidth.
 
 # Known issues
-- Sometimes a download will hang because of the way YouTube works. If the download outright fails it will be restarted automatically. Currently there is no built-in limit for amount of retries.
+- The progress bar sometimes moves backwards (this is because video download, audio download and muxing progress are reported separately now).
+- Sometimes SMQ won't detect the run finished downloading properly and will instead show them as failed. They are however available for viewing in the downloads folder.
+- Failed or cancelled downloads aren't detected and as a result deleted properly yet and will thus stay in the downloads folder as a .part file.
