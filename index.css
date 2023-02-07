@@ -1,0 +1,430 @@
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Material Icons'),
+		local('MaterialIconsOutlined-Regular'),
+		url(./MaterialIconsOutlined-Regular.otf) format('opentype');
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+i {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 18px;
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	margin: 4px;
+}
+
+button > i {
+	margin: 0 8px 0 -4px;
+}
+
+td > i,
+.downloading input,
+.downloaded input,
+.incomplete input {
+	display: none;
+}
+
+.downloading i.cancel,
+.downloaded i.delete,
+.hanging i.cancel,
+.incomplete i.delete {
+	display: block;
+}
+
+tr i {
+	cursor: pointer;
+	color: #2F4B4C;
+}
+
+.downloaded + tr .progressBar {
+	background: green;
+}
+
+.hanging + tr .progressBar {
+	background: orange;
+}
+
+.incomplete + tr .progressBar {
+	background: red;
+}
+
+._24 {
+	font-size: 24px;
+}
+
+* {
+	-webkit-user-select: none;
+	transition: .2s;
+	font-family: arial;
+	color: #E1E3E2;
+	font-size: medium;
+}
+
+*:focus {
+	outline: none;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+a {
+	color: unset;
+	text-decoration: unset;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+th, td {
+	text-align: left;
+	padding: 0 16px;
+}
+
+td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+td:nth-child(1), th:nth-child(1) {
+	padding: 6px 8px;
+	width: 36px;
+	text-align: center;
+}
+
+td:nth-last-child(2) {
+	white-space: nowrap;
+}
+
+.tableR {
+	text-align: right;
+}
+
+table {
+	border-spacing: 0px;
+	width: 100%;
+	align-self: start;
+}
+
+table .userName {
+	-webkit-background-clip: text !important; /* I cba to figure out what's overwriting this so the !important stays :) */
+	-webkit-text-fill-color: transparent;
+	font-weight: bold;
+	display: inline-block;
+}
+
+table .userNameWrapper {
+	white-space: nowrap;
+}
+
+thead tr {
+	height: 56px;
+
+}
+
+tr:not(:last-child) > td[colSpan] {
+	border-bottom: solid 1px #889393;
+}
+
+tr > td[colSpan] {
+	padding: 0;
+	height: 5px;
+}
+tbody tr[id] > td {
+	height: 42px;
+	padding: 5px 16px 0;
+}
+
+th {
+	background: #1E393B;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	color: #C9E8E8;
+}
+
+th:first-child {
+	border-bottom-left-radius: 12px;
+}
+
+th:last-child {
+	border-bottom-right-radius: 12px;
+}
+
+
+#runsTableContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 8px 0px 8px 8px;
+	flex: 1 1 auto;
+	overflow: auto overlay;
+	border-radius: 12px;
+	border: none;
+	background: #1B2626;
+}
+
+#runsTableContainer > span {
+	padding: 16px;
+}
+
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #2F4B4C;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #3B5859;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: #415E5F;
+}
+
+::-webkit-scrollbar-track-piece:end,
+::-webkit-scrollbar-track-piece:start {
+	margin: 56px 6px 6px 12px;
+	border-radius: 4px;
+	background: none
+}
+
+::-webkit-scrollbar-corner { background: rgba(0,0,0,0); }
+
+tbody > tr[id]:hover,
+tbody > tr[id]:hover + tr {
+	background: #173435;
+}
+
+tbody > tr[id]:hover i {
+	color: #c9e8e8;
+}
+
+
+td > i:hover {
+	color: #c9351d !important;
+}
+
+a > i:hover {
+	color: white !important;
+}
+
+.selectedRow, .selectedRow + tr {
+	background: #294546;
+}
+
+.obsolete > td {
+	font-style: italic;
+	color: grey;
+}
+
+.progressBar {
+	height: 5px;
+	width: 0%;
+	background: #118cd4;
+}
+
+#optionsContainer {
+	margin: 8px;
+	padding: 16px;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 246px;
+	background: #1B2626;
+}
+
+hr {
+	width: 100%;
+	border: none;
+	border-bottom: solid 1px #889393;
+}
+
+.flexRow {
+	display: flex;
+	align-items: center;
+}
+
+input#gamesInput {
+	background: #3E4848;
+	width: 218px;
+	height: 36px;
+	padding: 2px 12px 2px 16px;
+	border: none;
+	border-radius: 4px;
+	color: #BDC8C8;
+	margin-bottom: 10px;
+}
+
+input#gamesInput:hover {
+	background: #475252;
+}
+
+input#gamesInput:focus {
+	background: #566060;
+	color: #E1E3E2;
+}
+
+
+input#gamesInput::placeholder {
+	color: lightgrey;
+}
+
+/* BUTTONS */
+
+button {
+	border          : none;
+	background      : #2F4B4C;
+	color           : #C9E8E8;
+	min-width       : 64px;
+	height          : 40px;
+	padding         : 16px;
+	margin          : 8px 8px 0px 0px;
+	transition      : .15s;
+	cursor          : pointer;
+	border-radius   : 20px;
+	display         : flex;
+	align-items     : center;
+	justify-content : center;
+	white-space     : nowrap;
+}
+
+button i {
+	color: #C9E8E8;
+}
+
+button:not([disabled]):hover {
+	background: #3B5859;
+	box-shadow: 0px 4px 4px #00000040;
+}
+
+button:not([disabled]):active {
+	background: #415E5F;
+}
+
+button[disabled] {
+	background : #363636;
+	color      : #777878;
+	cursor     : default;
+}
+
+button[disabled] i {
+	color: #777878;
+}
+
+#showDownloads {
+	margin-bottom: 12px;
+}
+
+/* CHECKBOXES */
+
+input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	margin: 12px;
+	position: relative;
+	cursor: pointer;
+}
+
+input[type=checkbox]:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	top: -3px;
+	left: -3px;
+	border: 2px solid #2F4B4C;
+	border-radius: 3px;
+	background: #1A2626;
+}
+
+input[type=checkbox]:checked:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	top: -3px;
+	left: -3px;
+	border: 2px solid #2F4B4C;
+	background: #2F4B4C;
+}
+input[type=checkbox]:checked:after {
+	content: "";
+	display: block;
+	width: 6px;
+	height: 12px;
+	border: solid #C9E8E8;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	position: absolute;
+	top: -1px;
+	left: 4px;
+}
+
+label {
+	padding: 0 8px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+img {
+	height: 12px;
+	border-radius: 2px;
+}
+
+@media screen and (max-width: 950px) {
+	body {
+		flex-direction: column-reverse;
+	}
+
+	hr {
+		width: 1px;
+		height: 100%;
+		margin: 0px 8px;
+		justify-self: unset;
+		border-bottom: none;
+		border-right: solid 1px #889393;
+	}
+
+	#optionsContainer {
+		width: auto;
+		height: 194px;
+		flex-direction: row;
+		margin-bottom: 0;
+	}
+
+	#runsTableContainer {
+		margin-right: 8px;
+	}
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<link rel="stylesheet" href="index.css"></link>
+	</head>
+	<body>
+		<div id="runsTableContainer">
+			<span>Getting runs...</span>
+			<table>
+				<thead style="display: none;">
+					<th><input id="selectAllRuns" type="checkbox"></th>
+					<th title="ID of the run">Run</th>
+					<th title="Place on the leaderboard that the run would end up if it were to be verified right now">Place</th>
+					<th title="Players that participated in the run">Players</th>
+					<th>Category</th>
+					<th>Level</th>
+					<th class="tableR" title="Submitted run time.">Time</th>
+					<th title="Date on which the run was submitted.">Submission date</th>
+				</thead>
+				<tbody id="runsList">
+				</tbody>
+			</table>
+		</div>
+		<div id="optionsContainer">
+			<div>
+				<input id="gamesInput" list="gamesList" title="Select game to view" placeholder="Select game to view" spellcheck="false" />
+				<datalist id="gamesList"></datalist>
+
+				<div class="flexRow">
+					<button id="refreshRuns" title="Refresh runs list for deleted downloads etc.">Refresh runs</button>
+					<button id="reloadAPI" title="Clear cached runs/leaderboards and reload">Reload API</button>
+				</div>
+
+				<button id="downloadVideos" class="iconed" title="Download videos of selected runs" disabled>
+					<i>file_download</i>
+					Download selected
+				</button>
+				<button id="showDownloads" class="iconed" title="Open File Explorer to the folder containing the runs">
+					<i>folder_open</i>
+					Show downloads
+				</button>
+			</div>
+			<hr>
+			<div>
+				<div class="flexRow">
+					<input id="optHideObsolete" type="checkbox" />
+					<label for="optHideObsolete">Hide obsolete runs</label>
+				</div>
+				<div class="flexRow">
+					<input id="optHideLevels" type="checkbox" />
+					<label for="optHideLevels">Hide level runs</label>
+				</div>
+				<div class="flexRow">
+					<input id="optHideFullgame" type="checkbox" />
+					<label for="optHideFullgame">Hide fullgame runs</label>
+				</div>
+			</div>
+			<hr>
+			<div>
+				<div class="flexRow">
+					<input id="optHMS" type="checkbox" />
+					<label for="optHMS">Display time in HMS</label>
+				</div>
+				<div class="flexRow">
+					<input id="optFlags" type="checkbox" />
+					<label for="optFlags">Display player flags</label>
+				</div>
+				<div class="flexRow">
+					<input id="optRunID" type="checkbox" />
+					<label for="optRunID">Display run ID</label>
+				</div>
+				<div class="flexRow">
+					<input id="optAutoRetry" type="checkbox" />
+					<label for="optAutoRetry" title="Automatically retry failed downloads. Does not retry incomplete downloads found on startup">Auto retry downloads</label>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>

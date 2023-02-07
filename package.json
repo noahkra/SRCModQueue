@@ -1,0 +1,32 @@
+{
+  "name": "SRCModQueue",
+  "version": "1.4.0",
+  "description": "Easy verification queue viewer for Speedrun.com moderators/verifiers",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Noah van der Kraan",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.3.6"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.6",
+    "semver": "^6.3.0",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "build": {
+    "appId": "com.srcmodqueue.app",
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "extraFiles": [
+      "./resources/**/*"
+    ]
+  }
+}
