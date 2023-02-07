@@ -12,6 +12,7 @@ If you have any feature requests or want to report a bug, make sure to submit an
 - [How to use](#how-to-use)
 - [Options and buttons](#options-and-buttons)
 - [Known issues](#known-issues)
+- [Contributing](#contributing)
 
 ***
 
@@ -76,3 +77,6 @@ Automatically retry failed downloads. Recommended to be left on unless you have 
 - The progress bar sometimes moves backwards (this is because video download, audio download and muxing progress are reported separately now).
 - Sometimes SMQ won't detect the run finished downloading properly and will instead show them as failed. They are however available for viewing in the downloads folder.
 - Failed or cancelled downloads aren't detected and as a result deleted properly yet and will thus stay in the downloads folder as a .part file.
+
+# Contributing
+Please make sure to check out CONTRIBUTING.md before contributing any code to the repo!
