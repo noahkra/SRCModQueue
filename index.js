@@ -139,7 +139,7 @@ async function downloadVideo(vidURL, id) {
 	let ytdl = spawn(path.join(process.cwd(), "resources", "yt-dlp.exe"), [
 		vidURL,                                            // URL of the video to be downloaded.
 		"-o", path.join(paths.downloads, id + ".%(ext)s"), // Output set to path, filename and extension.
-		"-f", "bv[height<=720]+ba",                        // Format set to best video with a maximum height of 720p, muxxed with best audio.
+		"-f", "bv[height<=720][ext=mp4]+ba",               // Format set to best video with a maximum height of 720p, muxxed with best audio.
 		"--merge-output-format", "mp4"                     // Set output format to mp4.
 	]);
 
