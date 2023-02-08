@@ -191,6 +191,7 @@ async function downloadVideo(vidURL, id) {
 	ytdl.on("exit", (_, sig) => {
 		if (sig !== "SIGINT") {
 			console.log("Finished in", (performance.now() - p1) / 1000);
+			updateProgress(id, 1);
 			localStorage.removeItem("dl_" + id);
 		}
 	});
